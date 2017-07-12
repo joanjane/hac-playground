@@ -1,10 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "demo"
+    "name": "hac-playground"
   },
   "apps": [
     {
+      "name": "app-jit",
       "root": "src",
       "outDir": "dist",
       "assets": [
@@ -12,10 +13,35 @@
         "favicon.ico"
       ],
       "index": "index.html",
-      "main": "main.ts",
+      "main": "main.jit.ts",
       "polyfills": "polyfills.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.app.json",
+      "testTsconfig": "tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "name": "app-aot",
+      "root": "src",
+      "outDir": "dist",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.aot.ts",
+      "polyfills": "polyfills.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.app-aot.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [

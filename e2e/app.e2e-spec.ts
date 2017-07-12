@@ -1,14 +1,14 @@
-import { DemoPage } from './app.po';
+import { HacPage } from './app.po';
 
-describe('demo App', () => {
-  let page: DemoPage;
+describe('hac playground App', () => {
+  let page: HacPage;
 
   beforeEach(() => {
-    page = new DemoPage();
+    page = new HacPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!!');
+    expect(page.getParagraphText()).toEqual('Handy Angular Components playground');
   });
 });

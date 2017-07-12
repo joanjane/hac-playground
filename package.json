@@ -1,14 +1,19 @@
 {
-  "name": "demo",
-  "version": "0.0.0",
+  "name": "hac-playground",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "npm run watch",
+    "build:debug": "ng build --app=app-jit",
+    "watch": "npm run build:debug -- --watch",
+    "ngc-aot": "rimraf ./src/aot && ngc -p ./src/tsconfig.app-aot.json",
+    "build:release": "npm run ngc-aot && ng build --app=app-aot --aot --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "gulp-test": "gulp",
+    "serve": "simplehttpserver ./dist"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +27,7 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
+    "intl": "^1.2.5",
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
@@ -32,15 +38,18 @@
     "@types/jasmine": "2.5.45",
     "@types/node": "~6.0.60",
     "codelyzer": "~3.0.1",
+    "gulp": "^3.9.1",
     "jasmine-core": "~2.6.2",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
     "karma-chrome-launcher": "~2.1.1",
     "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "karma-coverage-istanbul-reporter": "^1.2.1",
     "protractor": "~5.1.2",
+    "rimraf": "^2.6.1",
+    "simplehttpserver": "0.0.6",
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
     "typescript": "~2.3.3"

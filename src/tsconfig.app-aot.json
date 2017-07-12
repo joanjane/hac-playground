@@ -8,7 +8,15 @@
   },
   "exclude": [
     "test.ts",
-    "**/*.spec.ts",
+    "**/*.spec.ts"
+  ],
+  "files": [
+    "app/app.module.ts",
     "main.aot.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "entryModule": "app/app.module#AppModule",
+    "genDir": "./aot",
+    "skipMetadataEmit" : true
+  }
 }

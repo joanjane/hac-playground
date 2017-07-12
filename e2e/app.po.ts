@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class DemoPage {
+export class HacPage {
   navigateTo() {
     return browser.get('/');
   }
