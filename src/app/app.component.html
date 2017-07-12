@@ -1,1 +1,7 @@
 <h1>{{title}}</h1>
+<div>
+    Display language: {{ 'CURRENT_LANG' | translate }}
+    <button *ngFor="let lang of getLangs()" (click)="setLang(lang)">{{lang}}</button>
+
+    <app-datepicker-sample></app-datepicker-sample>
+</div>

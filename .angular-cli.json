@@ -7,7 +7,7 @@
     {
       "name": "app-jit",
       "root": "src",
-      "outDir": "dist",
+      "outDir": "wwwroot/playground",
       "assets": [
         "assets",
         "favicon.ico"
@@ -32,7 +32,7 @@
     {
       "name": "app-aot",
       "root": "src",
-      "outDir": "dist",
+      "outDir": "wwwroot/playground",
       "assets": [
         "assets",
         "favicon.ico"

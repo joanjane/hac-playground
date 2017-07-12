@@ -1,8 +1,8 @@
 # Handy Angular Components playground
 
-This project is a sample project that uses [Handy Angular Components library](https://github.com/joanjane/handy-angular-components)
+This project is a sample project that uses [Handy Angular Components library](https://github.com/joanjane/handy-angular-components), ngx-translate for localization and compiles to JIT and AOT.
 
-## Development server
+## Development
 
 Run `npm start` to build the demo in watch mode. Run `npm run serve` in another console to start a server and navigate to `http://localhost:8000/`.
 

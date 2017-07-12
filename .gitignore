@@ -2,6 +2,8 @@
 
 # compiled output
 /dist
+/wwwroot/playground
+/wwwroot/vendor
 /tmp
 /out-tsc
 /src/aot

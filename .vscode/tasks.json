@@ -1,0 +1,47 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "taskName": "build:debug",
+            "command": "npm",
+            "args": [
+                "run",
+                "build:debug"
+            ],
+            "type": "shell"
+        },
+        {
+            "taskName": "build:watch",
+            "command": "npm",
+            "args": [
+                "start"
+            ],
+            "type": "shell"
+        },
+        {
+            "taskName": "serve",
+            "command": "npm",
+            "args": [
+                "run",
+                "serve"
+            ],
+            "type": "shell"
+        },
+        {
+            "type": "npm",
+            "script": "build:debug",
+            "problemMatcher": [
+                "$tsc"
+            ]
+        },
+        {
+            "type": "npm",
+            "script": "watch",
+            "problemMatcher": [
+                "$tsc-watch"
+            ]
+        }
+    ]
+}
