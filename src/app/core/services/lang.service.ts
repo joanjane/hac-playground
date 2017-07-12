@@ -16,9 +16,7 @@ export class LangService {
     }
 
     getCurrentLang(): string {
-        const lang = sessionStorage.getItem('hac-playground-language') as string;
-        console.log(`current lang ${lang}`)
-        return lang;
+        return sessionStorage.getItem('hac-playground-language') as string;
     }
 
     setLang(lang, skipRefresh: boolean = false): void {
