@@ -1,3 +1,4 @@
+import { LOCALE_ID } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -11,23 +12,21 @@ export class LangService {
         this.translate.setDefaultLang(this.defaultLang);
 
         // the lang to use, if the lang isn't available, it will use the current loader to get them
-        if (!this.getCurrentLang()) {
-            this.setLang(this.defaultLang);
-        }
+        this.setLang(this.getCurrentLang() || this.defaultLang, true);
     }
 
     getCurrentLang(): string {
-        return sessionStorage.getItem('hac-playground-language') as string;
+        const lang = sessionStorage.getItem('hac-playground-language') as string;
+        console.log(`current lang ${lang}`)
+        return lang;
     }
 
     setLang(lang, skipRefresh: boolean = false): void {
-        if (lang === this.getCurrentLang()) {
-            return;
-        }
-
         sessionStorage.setItem('hac-playground-language', lang);
         this.translate.use(lang);
-        window.location.reload(); // Patch: reload window to apply language
+        if (lang !== this.getCurrentLang() || !skipRefresh) {
+            window.location.reload(); // Patch: reload window to apply language
+        }
     }
 
     getLangs(): string[] {
