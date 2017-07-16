@@ -30,6 +30,9 @@ export class LangService {
     getLangs(): string[] {
         return this.appLangs;
     }
+}
 
 
+export function LangProvider(langService: LangService): string {
+  return langService.getCurrentLang();
 }

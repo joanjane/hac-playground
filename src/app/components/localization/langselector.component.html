@@ -1,0 +1,8 @@
+<div>
+    Display language: {{ 'CURRENT_LANG' | translate }}
+    <button 
+        *ngFor="let lang of getLangs()"
+        class="hp-langselector-button"
+        [ngClass]="{'hp-langselector-button--is-active': isActive(lang)}"
+        (click)="setLang(lang)">{{lang}}</button>
+</div>

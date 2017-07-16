@@ -5,7 +5,7 @@ export class HacPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getFirstLanguage() {
+    return element(by.css('app-root .hp-langselector-button')).getText();
   }
 }

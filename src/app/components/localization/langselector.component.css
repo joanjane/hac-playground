@@ -1,0 +1,11 @@
+.hp-langselector-button {
+    background: none;
+    border: 1px solid #eee;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.hp-langselector-button--is-active {
+    background: rgba(221, 221, 221, 0.26);
+    font-weight: bold;
+}

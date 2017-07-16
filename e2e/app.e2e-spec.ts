@@ -7,8 +7,8 @@ describe('hac playground App', () => {
     page = new HacPage();
   });
 
-  it('should display title', () => {
+  it('should display languages', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Handy Angular Components playground');
+    expect(page.getFirstLanguage()).toEqual('en');
   });
 });

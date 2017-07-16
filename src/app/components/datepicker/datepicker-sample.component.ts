@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { HacDatepickerOptions } from "handy-angular-components";
+import { Component, OnInit, Input } from '@angular/core';
+import { HacDatepickerOptions } from 'handy-angular-components';
 
 @Component({
-    selector: 'app-datepicker-sample',
-    templateUrl: './app-datepicker-sample.component.html',
-    styleUrls: ['./app-datepicker-sample.component.css']
+    selector: DatepickerSampleComponent.selector,
+    templateUrl: './datepicker-sample.component.html',
+    styleUrls: ['./datepicker-sample.component.css']
 })
 export class DatepickerSampleComponent implements OnInit {
+    static selector = 'app-datepicker-sample';
     selectedSingleDate: Date;
     datepickerSingleOptions: HacDatepickerOptions;
 
