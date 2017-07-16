@@ -24,11 +24,27 @@ export class ComponentBootstrapper {
     }
 
     /**
-     * Bootstrapp all elements that have matching selector registered with 
+     * Bootstrap all elements that have matching selector registered with 
      * ComponentBootstrapper.registerRootComponent(component, selector)
      * @param appRef ApplicationRef of module to bootstrap
+     * @param registerRootComponents (Optional) Instead of registering components via
+     * ComponentBootstrapper.registerRootComponent(), you can use this param. Important,
+     * the list of components need to have an static property 'selector' with the selector
+     * of the component.
+     * Example:
+     * @Component({
+     *  selector: AppRootComponent.selector,
+     *  ... // more options
+     * })
+     * export class AppRootComponent {
+     *  static selector = 'app-root';
+     * }
      */
-    static bootstrap(appRef: ApplicationRef) {
+    static bootstrap(appRef: ApplicationRef, registerRootComponents?: { selector: string }[]) {
+        if (registerRootComponents) {
+            registerRootComponents.forEach(c => this.registerRootComponent(c, c.selector));
+        }
+
         const rootElems = document.querySelectorAll(this.buildRootComponentsSelector());
 
         for (let i = 0; i < rootElems.length; i++) {

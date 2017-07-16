@@ -9,10 +9,10 @@ export class LangService {
 
     constructor(private translate: TranslateService) {
         // this language will be used as a fallback when a translation isn't found in the current language
-        this.translate.setDefaultLang(environment.defaultLanguage);
+        this.translate.setDefaultLang(environment.settings.defaultLanguage);
 
         // the lang to use, if the lang isn't available, it will use the current loader to get them
-        this.setLang(this.getCurrentLang() || environment.defaultLanguage, true);
+        this.setLang(this.getCurrentLang() || environment.settings.defaultLanguage, true);
     }
 
     getCurrentLang(): string {
@@ -29,7 +29,7 @@ export class LangService {
     }
 
     getLangs(): string[] {
-        return environment.appLanguages;
+        return environment.settings.appLanguages;
     }
 }
 

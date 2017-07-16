@@ -1,18 +1,24 @@
+// Dependencies
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HacModule } from 'handy-angular-components';
 
+// Modules
 import { CoreModule } from './core/core.module';
 
-import { ComponentBootstrapper } from './component-bootstrapper';
+// Components
 import { LangSelectorComponent } from './components/localization/langselector.component';
 import { DatepickerSampleComponent } from './components/datepicker/datepicker-sample.component';
 
+import { ComponentBootstrapper } from './component-bootstrapper';
+
 // Register top level (root) components (each one has static property 'selector' declared)
-const rootComponents = [LangSelectorComponent, DatepickerSampleComponent];
-rootComponents.forEach(c => ComponentBootstrapper.registerRootComponent(c, c.selector));
+const rootComponents = [
+  LangSelectorComponent, 
+  DatepickerSampleComponent
+];
 
 @NgModule({
   declarations: [
@@ -26,10 +32,21 @@ rootComponents.forEach(c => ComponentBootstrapper.registerRootComponent(c, c.sel
     HacModule.forRoot(),
     CoreModule.forRoot()
   ],
+
+  /**
+   * Define the root components to generate factories. Without this, 
+   * bootstrapping multiple components won't be possible as factories
+   * are not generated
+   */
   entryComponents: rootComponents
 })
 export class AppModule {
+  /**
+   * Implement a custom bootstrap which allows bootstrapping multiple
+   * root components. See ComponentBootstrapper implementation for more
+   * details
+   */
   ngDoBootstrap(appRef: ApplicationRef) {
-    ComponentBootstrapper.bootstrap(appRef);
+    ComponentBootstrapper.bootstrap(appRef, rootComponents);
   }
 }
