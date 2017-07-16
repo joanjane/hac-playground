@@ -1,0 +1,13 @@
+.hp-single-datepicker {
+    width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .hp-single-datepicker {
+        width: 100%;
+    }
+}
+
+.hac-cal-icon {
+    display: none;
+}

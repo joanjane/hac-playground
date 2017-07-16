@@ -1,3 +1,8 @@
 {
-    "CURRENT_LANG": "Español"
+    "CURRENT_LANG": "Español",
+    "LANGUAGE": "Idioma",
+    "DATEPICKER_SAMPLE": {
+        "TODAY": "Hoy",
+        "SELECT": "Seleccionar"
+    }
 }

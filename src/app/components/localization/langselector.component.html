@@ -1,5 +1,5 @@
 <div>
-    Display language: {{ 'CURRENT_LANG' | translate }}
+    {{ 'LANGUAGE' | translate }}: {{ 'CURRENT_LANG' | translate }}
     <button 
         *ngFor="let lang of getLangs()"
         class="hp-langselector-button"
