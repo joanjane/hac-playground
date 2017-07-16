@@ -33,8 +33,3 @@ export class AppModule {
     ComponentBootstrapper.bootstrap(appRef);
   }
 }
-
-// AOT Support with exported function
-export function entryComponents() {
-  return ComponentBootstrapper.getRegisteredRootComponents();
-}
