@@ -6,7 +6,7 @@ Features:
 * A bit more real world demos using _Handy Angular Components_
 * Localization via ngx-translate
 * AOT and JIT compilation via npm scripts on package.json
-* *Multiple root components* setup (cool right?). Use angular 2+ as a pure component framework without the need of creating a SPA or using a single root component. See [app.module.ts](https://github.com/joanjane/hac-playground/blob/master/src/app/app.module.ts#32) to learn how to bootstrap more than one component.
+* *Multiple root components* setup (cool right?). Use angular 2+ as a pure component framework without the need of creating a SPA or using a single root component. See [app.module.ts](https://github.com/joanjane/hac-playground/blob/master/src/app/app.module.ts#L32) to learn how to bootstrap more than one component.
 
 ## Development
 
