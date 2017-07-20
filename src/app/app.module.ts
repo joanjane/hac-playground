@@ -7,17 +7,20 @@ import { HacModule } from 'handy-angular-components';
 
 // Modules
 import { CoreModule } from './core/core.module';
+import { BandsInTownModule } from './bandsintown-sample/bandsintown.module';
 
 // Components
 import { LangSelectorComponent } from './components/localization/langselector.component';
 import { DatepickerSampleComponent } from './components/datepicker/datepicker-sample.component';
+import { BandsInTownSearchComponent } from './bandsintown-sample/components/bandsintown-search.component';
 
 import { ComponentBootstrapper } from './component-bootstrapper';
 
 // Register top level (root) components (each one has static property 'selector' declared)
 const rootComponents = [
   LangSelectorComponent, 
-  DatepickerSampleComponent
+  DatepickerSampleComponent,
+  BandsInTownSearchComponent
 ];
 
 @NgModule({
@@ -30,7 +33,8 @@ const rootComponents = [
     HttpModule,
     FormsModule,
     HacModule.forRoot(),
-    CoreModule.forRoot()
+    CoreModule.forRoot(),
+    BandsInTownModule
   ],
 
   /**

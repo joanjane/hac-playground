@@ -1,0 +1,78 @@
+<div class="app-bandsearch">
+    <h3>{{'BANDSINTOWN.TITLE' | translate}}</h3>
+    <p>{{'BANDSINTOWN.DESCRIPTION' | translate}}</p>
+    <form class="app-bandsearch-form" [formGroup]="searchForm" (submit)="onSubmit($event)">
+        <div class="app-bandsearch-box">
+            <div class="row">
+                <div class="col-md-5">
+                    <!-- Bands list -->
+                    <label for="bands">{{'BANDSINTOWN.BAND' | translate}}</label>
+                    <hac-dropdown [optionGroups]="bandsDropdown"
+                            [id]="'bands'"
+                            [filtrable]="true"
+                            [placeholder]="'BANDSINTOWN.BAND' | translate"
+                            [selected]="searchForm.get('bandName')" 
+                            (selectedChange)="searchForm.get('bandName').setValue($event)"></hac-dropdown>
+
+                    <ul class="app-bandsearch-errors" *ngIf="submitted && searchForm.get('bandName').invalid">
+                        <li *ngIf="searchForm.get('bandName').errors.required">
+                            {{ 'BANDSINTOWN.BAND_REQUIRED' | translate }}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-5">
+                    <!-- Event date filter -->
+                    <label for="eventdate">{{'BANDSINTOWN.EVENT_DATES' | translate}}</label>
+                    <hac-datepicker
+                        [startDate]="searchForm.get('startDate').value"
+                        (startDateChange)="searchForm.get('startDate').setValue($event)"
+                        [endDate]="searchForm.get('endDate').value"
+                        (endDateChange)="searchForm.get('endDate').setValue($event)"
+                        [options]="datepickerOptions"></hac-datepicker>
+
+                    <ul class="app-bandsearch-errors" *ngIf="submitted && (searchForm.get('startDate').invalid || searchForm.get('endDate').invalid)">
+                        <li *ngIf="searchForm.get('startDate').errors?.required">
+                            {{ 'BANDSINTOWN.START_DATE_REQUIRED' | translate }}
+                        </li>
+                        <li *ngIf="searchForm.get('endDate').errors?.required">
+                            {{ 'BANDSINTOWN.END_DATE_REQUIRED' | translate }}
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-2">
+                    <label><br /></label>
+                    <div>
+                        <button class="btn btn-block" type="submit" 
+                            [ngClass]="{'btn-danger': submitted && searchForm.invalid}"
+                            [disabled]="submitted && searchForm.invalid">
+                            {{ 'BANDSINTOWN.SEARCH' | translate }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    <br />
+    <br />
+    <div class="app-bandsearch-newband">
+        <div class="input-group">
+            <input type="text" class="form-control" [(ngModel)]="newBand" placeholder="{{'BANDSINTOWN.ADD_BAND' | translate}}" />
+            <span class="input-group-addon app-bandsearch-addbandbtn" (click)="addBand()">+</span>
+        </div>
+    </div>
+
+    <div *ngIf="events">
+         <h3>{{ 'BANDSINTOWN.RESULTS' | translate:{ results: events.length } }}</h3>
+        <ul>
+            <li *ngFor="let event of events">
+                <strong>{{event.title}}</strong>
+                 <i>{{event.date | date: 'mediumDate'}}</i> 
+                <a [href]="event.url" target="_blank">{{ 'BANDSINTOWN.EVENT' | translate }}</a>
+            </li>
+        </ul> 
+    </div>
+</div>

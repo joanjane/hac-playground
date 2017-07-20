@@ -4,5 +4,20 @@
     "DATEPICKER_SAMPLE": {
         "TODAY": "Hoy",
         "SELECT": "Seleccionar"
+    },
+    "BANDSINTOWN": {
+        "SEARCH": "Buscar",
+        "TITLE": "Demo reactive form - Buscador de eventos BandsInTown",
+        "DESCRIPTION": "Busca eventos de una de las bandas en un periodo",
+        "BAND": "Banda",
+        "EVENT_DATES": "Fechas del evento",
+        "START_DATE": "Fecha de inicio",
+        "END_DATE": "Fecha fin",
+        "RESULTS": "{{results}} resultados",
+        "ADD_BAND": "Añadir otra banda",
+        "EVENT": "Evento",
+        "BAND_REQUIRED": "Escoge una banda",
+        "START_DATE_REQUIRED": "Escoge una fecha de inicio",
+        "END_DATE_REQUIRED": "Escoge una fecha fin"
     }
 }
