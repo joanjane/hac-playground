@@ -73,5 +73,3 @@ import 'intl';  // Run `npm install --save intl`.
  */
 import 'intl/locale-data/jsonp/en';
 import 'intl/locale-data/jsonp/es';
-
-import 'handy-angular-components/extensions/date'; // Date extensions to fix problems with formatting and regions

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Band, BandEvent, SearchBandEventsModel } from '../models';
+import 'handy-angular-components/extensions/date'; // Date extensions to fix problems with formatting and regions
 
 @Injectable()
 export class BandsInTownService {
@@ -60,7 +61,7 @@ export class BandsInTownService {
         };
     }
 
-    private formatIsoDate(date: Date) {
+    private formatIsoDate(date: Date): string {
         return date.formatDatePart();
     }
 }
