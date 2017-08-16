@@ -27,7 +27,7 @@
 
 
 /* Style overriding */
-.app-bandsearch .hac-cal-icon {
+.app-bandsearch .hac-icon-cal {
     display: none;
 }
 
@@ -41,39 +41,18 @@
 }
 
 .app-bandsearch .hac-cal-selectorwrapper {
-    border: none;
+    border-color: transparent;
     border-bottom: 1px solid #e1e1e2;
-    top: 0;
 }
 
 .app-bandsearch .hac-dd-label {
-    padding: 0.54rem .3rem;
     border: none;
     border-bottom: 1px solid #e1e1e2;
 }
 
-.app-bandsearch .hac-dd-label:after {
-    content: '';
-    border: 1px solid rgba(0, 0, 0, 0.37);
-    border-width: 0 1px 1px 0;
-    display: inline-block;
-    padding: 6px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    position: absolute;
-    right: 27px;
-}
-
-.app-bandsearch .hac-dd-caret {
-    display: none;
-}
 
 .app-bandsearch .hac-cal-date {
     border-bottom-style: none;
-}
-
-.app-bandsearch .hac-cal-date--is-active {
-    font-weight: bold;
 }
 
 .app-bandsearch .hac-cal-day--in-range,
@@ -84,6 +63,8 @@
     color: white;
 }
 
-.app-bandsearch .hac-cal-day.hac-cal-day--is-hidden {
-    background: none!important;
+
+.app-bandsearch .hac-dd-option:hover {
+    background: #00aadb!important;
+    color: white;
 }

@@ -62,7 +62,11 @@ export class BandsInTownSearchComponent implements OnInit, OnDestroy {
             return;
         }
 
-        const search = this.searchForm.value as SearchBandEventsModel;
+        const search = {
+            bandName: this.searchForm.value.bandName,
+            startDate: this.searchForm.value.dates.startDate,
+            endDate: this.searchForm.value.dates.endDate
+        };
         this.bandsService.searchBandEvents(search)
             .subscribe((events) => {
                 console.log(`Got ${events.length} results`);
@@ -92,8 +96,7 @@ export class BandsInTownSearchComponent implements OnInit, OnDestroy {
     private buildForm(): void {
         this.searchForm = this.formBuilder.group({
             bandName: new FormControl(null, Validators.required),
-            startDate: new FormControl(null, Validators.required),
-            endDate: new FormControl(null, Validators.required)
+            dates: new FormControl(null, Validators.required)
         });
     }
 

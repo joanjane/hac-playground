@@ -1,25 +1,25 @@
 import { NgModule, LOCALE_ID, ModuleWithProviders } from '@angular/core';
-import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateStore } from '@ngx-translate/core/src/translate.store';
 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { LangService, LangProvider } from './services/lang.service';
+import { HttpClientModule, HttpClient } from "@angular/common/http";
 
 // AoT requires an exported function for factories
-export function HttpLoaderFactory(http: Http) {
+export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, '/i18n/', '.json');
 }
 
 @NgModule({
   imports: [
-    HttpModule,
+    HttpClientModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
         useFactory: HttpLoaderFactory,
-        deps: [Http]
+        deps: [HttpClient]
       }
     })
   ],

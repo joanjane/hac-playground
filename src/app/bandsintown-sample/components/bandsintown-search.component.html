@@ -11,8 +11,7 @@
                             [id]="'bands'"
                             [filtrable]="true"
                             [placeholder]="'BANDSINTOWN.BAND' | translate"
-                            [selected]="searchForm.get('bandName')" 
-                            (selectedChange)="searchForm.get('bandName').setValue($event)"></hac-dropdown>
+                            formControlName="bandName"></hac-dropdown>
 
                     <ul class="app-bandsearch-errors" *ngIf="submitted && searchForm.get('bandName').invalid">
                         <li *ngIf="searchForm.get('bandName').errors.required">
@@ -25,18 +24,12 @@
                     <!-- Event date filter -->
                     <label for="eventdate">{{'BANDSINTOWN.EVENT_DATES' | translate}}</label>
                     <hac-datepicker
-                        [startDate]="searchForm.get('startDate').value"
-                        (startDateChange)="searchForm.get('startDate').setValue($event)"
-                        [endDate]="searchForm.get('endDate').value"
-                        (endDateChange)="searchForm.get('endDate').setValue($event)"
+                        formControlName="dates"
                         [options]="datepickerOptions"></hac-datepicker>
 
-                    <ul class="app-bandsearch-errors" *ngIf="submitted && (searchForm.get('startDate').invalid || searchForm.get('endDate').invalid)">
-                        <li *ngIf="searchForm.get('startDate').errors?.required">
-                            {{ 'BANDSINTOWN.START_DATE_REQUIRED' | translate }}
-                        </li>
-                        <li *ngIf="searchForm.get('endDate').errors?.required">
-                            {{ 'BANDSINTOWN.END_DATE_REQUIRED' | translate }}
+                    <ul class="app-bandsearch-errors" *ngIf="submitted && searchForm.get('dates').invalid">
+                        <li *ngIf="searchForm.get('dates').errors?.required">
+                            {{ 'BANDSINTOWN.DATE_RANGE_REQUIRED' | translate }}
                         </li>
                     </ul>
                 </div>
