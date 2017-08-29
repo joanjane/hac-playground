@@ -13,7 +13,7 @@
                             [placeholder]="'BANDSINTOWN.BAND' | translate"
                             formControlName="bandName"></hac-dropdown>
 
-                    <ul class="app-bandsearch-errors" *ngIf="submitted && searchForm.get('bandName').invalid">
+                    <ul class="app-bandsearch-errors" *ngIf="(submitted || searchForm.get('bandName').touched) && searchForm.get('bandName').invalid">
                         <li *ngIf="searchForm.get('bandName').errors.required">
                             {{ 'BANDSINTOWN.BAND_REQUIRED' | translate }}
                         </li>
@@ -27,9 +27,15 @@
                         formControlName="dates"
                         [options]="datepickerOptions"></hac-datepicker>
 
-                    <ul class="app-bandsearch-errors" *ngIf="submitted && searchForm.get('dates').invalid">
+                    <ul class="app-bandsearch-errors" *ngIf="(submitted || searchForm.get('dates').touched)  && searchForm.get('dates').invalid">
                         <li *ngIf="searchForm.get('dates').errors?.required">
                             {{ 'BANDSINTOWN.DATE_RANGE_REQUIRED' | translate }}
+                        </li>
+                        <li *ngIf="searchForm.get('dates').errors?.startDateRequired">
+                            {{ 'BANDSINTOWN.START_DATE_REQUIRED' | translate }}
+                        </li>
+                        <li *ngIf="searchForm.get('dates').errors?.endDateRequired">
+                            {{ 'BANDSINTOWN.END_DATE_REQUIRED' | translate }}
                         </li>
                     </ul>
                 </div>

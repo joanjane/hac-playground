@@ -17,6 +17,8 @@
         "ADD_BAND": "Añadir otra banda",
         "EVENT": "Evento",
         "BAND_REQUIRED": "Escoge una banda",
-        "DATE_RANGE_REQUIRED": "Escoge un rango de fechas"
+        "DATE_RANGE_REQUIRED": "Escoge un rango de fechas",
+        "START_DATE_REQUIRED": "Escoge una fecha de inicio",
+        "END_DATE_REQUIRED": "Escoge una fecha fin"
     }
 }
