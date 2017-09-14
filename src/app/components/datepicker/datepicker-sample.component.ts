@@ -39,7 +39,7 @@ export class DatepickerSampleComponent implements OnInit, OnDestroy {
         // Simple date picker with single dates and 1 visible month calendar, custom date formatting
         this.datepickerSingleOptions.showMonths = 1;
         this.datepickerSingleOptions.enableTodayAction = true;
-        this.datepickerSingleOptions.todayActionLabel = this.datepickerSampleLocale['TODAY'];
+        this.datepickerSingleOptions.enableClearAction = true;
         this.datepickerSingleOptions.startDatePlaceholder = this.datepickerSampleLocale['SELECT'];
     }
 }

@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-5">
                     <!-- Bands list -->
-                    <label for="bands">{{'BANDSINTOWN.BAND' | translate}}</label>
+                    <label class="app-bandsearch-placeholder" for="bands" hacLabelFocus="focused">{{'BANDSINTOWN.BAND' | translate}}</label>
                     <hac-dropdown [optionGroups]="bandsDropdown"
                             [id]="'bands'"
                             [filtrable]="true"
@@ -22,7 +22,7 @@
 
                 <div class="col-md-5">
                     <!-- Event date filter -->
-                    <label for="eventdate">{{'BANDSINTOWN.EVENT_DATES' | translate}}</label>
+                    <label class="app-bandsearch-placeholder" for="eventdate" hacLabelFocus="focused">{{'BANDSINTOWN.EVENT_DATES' | translate}}</label>
                     <hac-datepicker
                         formControlName="dates"
                         [options]="datepickerOptions"></hac-datepicker>

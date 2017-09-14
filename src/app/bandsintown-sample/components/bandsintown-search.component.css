@@ -14,10 +14,8 @@
     padding: 0;
 }
 
-.app-bandsearch-placeholder--focused {
-    position: absolute;
-    top: 10px;
-    left: 20px;
+.app-bandsearch-placeholder.focused {
+    color: blue;
 }
 
 .app-bandsearch-newband {

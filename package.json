@@ -5,18 +5,19 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run watch",
-    "prebuild:debug": "npm run vendor",
+    "prebuild:debug": "npm run clean && npm run vendor",
     "build:debug": "ng build --app=app-jit -d /playground",
     "watch": "npm run build:debug -- --watch",
-    "ngc-aot": "rimraf ./src/aot && ngc -p ./src/tsconfig.app-aot.json",
-    "prebuild:release": "npm run vendor",
+    "ngc-aot": "ngc -p ./src/tsconfig.app-aot.json",
+    "prebuild:release": "npm run clean && npm run vendor",
     "build:release": "npm run ngc-aot && ng build --app=app-aot --aot --prod -d /playground",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "gulp-test": "gulp",
     "serve": "simplehttpserver ./wwwroot",
-    "vendor": "rimraf wwwroot/vendor && cpx \"node_modules/handy-angular-components/assets/**/*.css*\" \"wwwroot/vendor/hac\""
+    "vendor": "rimraf wwwroot/vendor && cpx \"node_modules/handy-angular-components/assets/**/*.css*\" \"wwwroot/vendor/hac\"",
+    "clean": "rimraf ./src/aot"
   },
   "dependencies": {
     "@angular/animations": "^4.3.0",
@@ -31,7 +32,7 @@
     "@ngx-translate/core": "^7.0.0",
     "@ngx-translate/http-loader": "^1.0.2",
     "core-js": "^2.4.1",
-    "handy-angular-components": "^0.2.8",
+    "handy-angular-components": "^0.3.0",
     "intl": "^1.2.5",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.13"

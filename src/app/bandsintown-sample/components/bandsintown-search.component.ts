@@ -107,6 +107,7 @@ export class BandsInTownSearchComponent implements OnInit, OnDestroy {
             minDate: new Date(), // don't allow past dates
             elementId: 'eventdate',
             enableTodayAction: false,
+            enableClearAction: true,
             startDateFormat: 'shortDate',
             endDateFormat: 'shortDate'
         });
