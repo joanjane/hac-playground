@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Band, BandEvent, SearchBandEventsModel } from '../models';
@@ -30,19 +30,18 @@ export class BandsInTownService {
     }
   ];
 
-  constructor(private http: Http) { }
+  constructor(private http: HttpClient) { }
 
   searchBandEvents(search: SearchBandEventsModel): Observable<BandEvent[]> {
     // https://app.swaggerhub.com/apis/Bandsintown/PublicAPI/3.0.0
     // GET /artists/rolling%20stones/events?app_id=test&date=2017-09-09%2C2018-09-10
     let range = `${this.formatIsoDate(search.startDate)},${this.formatIsoDate(search.endDate)}`;
-    const request = `${this.apiHost}/artists/${search.bandName}/events`;
-    const params = `app_id=${this.appId}&date=${range}`;
-    console.log(`Searching bandsintown api events: ${request}?${params}`)
+    const request = `${this.apiHost}/artists/${search.bandName}/events` +
+      `?app_id=${this.appId}&date=${range}`;
+    console.log(`Searching bandsintown api events: ${request}`)
 
-    return this.http.get(request, {
-      params: params
-    }).pipe(map(response => (<Array<any>>response.json()).map(this.mapEvent)));
+    return this.http.get<Array<any>>(request)
+      .pipe(map(response => response.map(this.mapEvent)));
   }
 
   getBands(): Band[] {

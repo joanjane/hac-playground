@@ -11,19 +11,23 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "wwwroot/playground",
             "index": "src/index.html",
             "main": "src/main.jit.ts",
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              { "glob": "**/*", "input": "src/i18n/", "output": "i18n" }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/handy-angular-components/assets/styles/hac.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "outputPath": "wwwroot/hac-playground",
+            "deployUrl": "/hac-playground/",
+            "baseHref": "/hac-playground"
           },
           "configurations": {
             "production": {
@@ -48,7 +52,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-jit:build"
+            "browserTarget": "app-jit:build",
+            "servePath": "hac-playground"
           },
           "configurations": {
             "production": {
@@ -71,11 +76,13 @@
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/handy-angular-components/assets/hac.css"
             ],
             "assets": [
               "src/assets",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              { "glob": "**/*", "input": "src/i18n/", "output": "i18n" }
             ]
           }
         },
@@ -122,19 +129,23 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "wwwroot/playground",
             "index": "src/index.html",
             "main": "src/main.aot.ts",
             "tsConfig": "src/tsconfig.app-aot.json",
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              { "glob": "**/*", "input": "src/i18n/", "output": "i18n" }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/handy-angular-components/assets/styles/hac.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "outputPath": "wwwroot/hac-playground",
+            "deployUrl": "/hac-playground/",
+            "baseHref": "/hac-playground"
           },
           "configurations": {
             "production": {
@@ -159,7 +170,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "app-aot:build"
+            "browserTarget": "app-aot:build",
+            "servePath": "hac-playground"
           },
           "configurations": {
             "production": {
@@ -182,11 +194,13 @@
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/handy-angular-components/assets/hac.css"
             ],
             "assets": [
               "src/assets",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              { "glob": "**/*", "input": "src/i18n/", "output": "i18n" }
             ]
           }
         },
