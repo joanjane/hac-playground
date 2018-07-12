@@ -1,4 +1,4 @@
-handy-angular-components@1.0.0-beta.1
+handy-angular-components@1.0.0
 MIT
 MIT
 
