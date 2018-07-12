@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { HacModule } from 'handy-angular-components';
 
 // Modules
@@ -18,7 +18,7 @@ import { BandsInTownService } from './services/bandsintown.service';
   ],
   imports: [
     CommonModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     CoreModule,

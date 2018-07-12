@@ -2,6 +2,8 @@
 
 This project is a sample project that uses [Handy Angular Components library](https://github.com/joanjane/handy-angular-components).
 
+Try this sample [here](https://joanjane.github.io/hac-playground/)
+
 Features:
 * A bit more real world demos using _Handy Angular Components_
 * Localization via ngx-translate

@@ -24,7 +24,7 @@ export class ComponentBootstrapper {
     }
 
     /**
-     * Bootstrap all elements that have matching selector registered with 
+     * Bootstrap all elements that have matching selector registered with
      * ComponentBootstrapper.registerRootComponent(component, selector)
      * @param appRef ApplicationRef of module to bootstrap
      * @param registerRootComponents (Optional) Instead of registering components via
@@ -37,7 +37,7 @@ export class ComponentBootstrapper {
      *  ... // more options
      * })
      * export class AppRootComponent {
-     *  static selector = 'app-root';
+     *  static readonly selector = 'app-root';
      * }
      */
     static bootstrap(appRef: ApplicationRef, registerRootComponents?: { selector: string }[]) {

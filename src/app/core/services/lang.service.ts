@@ -1,7 +1,6 @@
-import { LOCALE_ID } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { environment } from "environments/environment";
+import { environment } from 'environments/environment';
 
 @Injectable()
 export class LangService {
@@ -17,7 +16,7 @@ export class LangService {
 
     getCurrentLang(): string {
         const currentLang = localStorage.getItem(this.localStorageLangKey) as string;
-        return this.getLangs().find(l => l === currentLang); //Ensure valid language
+        return this.getLangs().find(l => l === currentLang); // Ensure valid language
     }
 
     setLang(lang, skipRefresh: boolean = false): void {

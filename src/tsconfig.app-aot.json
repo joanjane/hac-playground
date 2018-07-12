@@ -11,7 +11,7 @@
     "**/*.spec.ts"
   ],
   "files": [
-    "app/app.module.ts",
+    "polyfills.ts",
     "main.aot.ts"
   ],
   "angularCompilerOptions": {
