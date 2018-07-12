@@ -1,0 +1,24 @@
+{
+    "CURRENT_LANG": "English4",
+    "LANGUAGE": "Language",
+    "DATEPICKER_SAMPLE": {
+        "TODAY": "Today",
+        "SELECT": "Select"
+    },
+    "BANDSINTOWN": {
+        "SEARCH": "Search",
+        "TITLE": "Reactive form demo - BandsInTown events browser",
+        "DESCRIPTION": "Search events of one of this bands in a period",
+        "BAND": "Band",
+        "EVENT_DATES": "Event dates",
+        "START_DATE": "Start date",
+        "END_DATE": "End date",
+        "RESULTS": "{{results}} results",
+        "ADD_BAND": "Add another band",
+        "EVENT": "Event",
+        "BAND_REQUIRED": "You must choose a band",
+        "DATE_RANGE_REQUIRED": "Choose a date range",
+        "START_DATE_REQUIRED": "Choose a start date",
+        "END_DATE_REQUIRED": "Choose an end date"
+    }
+}
