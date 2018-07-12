@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, ViewEncapsulation, OnDestroy } from '@angular/core';
 import { HacDatepickerOptions } from 'handy-angular-components';
-import { TranslateService } from "@ngx-translate/core";
-import { ISubscription } from "rxjs/Subscription";
+import { TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: DatepickerSampleComponent.selector,
@@ -10,11 +10,11 @@ import { ISubscription } from "rxjs/Subscription";
     encapsulation: ViewEncapsulation.None // Don't encapsulate CSS to allow override classes outside
 })
 export class DatepickerSampleComponent implements OnInit, OnDestroy {
+    static readonly selector = 'app-datepicker-sample';
     datepickerSampleLocale = {};
-    static selector = 'app-datepicker-sample';
     selectedSingleDate: Date;
     datepickerSingleOptions: HacDatepickerOptions = {};
-    subscriptions: ISubscription[] = [];
+    subscriptions: Subscription[] = [];
 
     constructor(private translateService: TranslateService) {
         // get subscription of translate service to unsuscribe later

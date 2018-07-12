@@ -1,7 +1,7 @@
 <div class="app-bandsearch">
     <h3>{{'BANDSINTOWN.TITLE' | translate}}</h3>
     <p>{{'BANDSINTOWN.DESCRIPTION' | translate}}</p>
-    <form class="app-bandsearch-form" [formGroup]="searchForm" (submit)="onSubmit($event)">
+    <form class="app-bandsearch-form" [formGroup]="searchForm" (submit)="onSubmit()">
         <div class="app-bandsearch-box">
             <div class="row">
                 <div class="col-md-5">
@@ -9,7 +9,7 @@
                     <label class="app-bandsearch-placeholder" for="bands" hacLabelFocus="focused">{{'BANDSINTOWN.BAND' | translate}}</label>
                     <hac-dropdown [optionGroups]="bandsDropdown"
                             [id]="'bands'"
-                            [filtrable]="true"
+                            [filtrable]=true
                             [placeholder]="'BANDSINTOWN.BAND' | translate"
                             formControlName="bandName"></hac-dropdown>
 
@@ -43,7 +43,7 @@
                 <div class="col-md-2">
                     <label><br /></label>
                     <div>
-                        <button class="btn btn-block" type="submit" 
+                        <button class="btn btn-block" type="submit"
                             [ngClass]="{'btn-danger': submitted && searchForm.invalid}"
                             [disabled]="submitted && searchForm.invalid">
                             {{ 'BANDSINTOWN.SEARCH' | translate }}
@@ -69,9 +69,9 @@
         <ul>
             <li *ngFor="let event of events">
                 <strong>{{event.title}}</strong>
-                 <i>{{event.date | date: 'mediumDate'}}</i> 
+                 <i>{{event.date | date: 'mediumDate'}}</i>
                 <a [href]="event.url" target="_blank">{{ 'BANDSINTOWN.EVENT' | translate }}</a>
             </li>
-        </ul> 
+        </ul>
     </div>
 </div>

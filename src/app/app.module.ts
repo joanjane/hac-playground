@@ -14,11 +14,18 @@ import { LangSelectorComponent } from './components/localization/langselector.co
 import { DatepickerSampleComponent } from './components/datepicker/datepicker-sample.component';
 import { BandsInTownSearchComponent } from './bandsintown-sample/components/bandsintown-search.component';
 
+// Locale
+import { registerLocaleData } from '@angular/common';
+import localeEn from '@angular/common/locales/en';
+import localeEs from '@angular/common/locales/es';
+registerLocaleData(localeEn, 'en');
+registerLocaleData(localeEs, 'es');
+
 import { ComponentBootstrapper } from './component-bootstrapper';
 
 // Register top level (root) components (each one has static property 'selector' declared)
 const rootComponents = [
-  LangSelectorComponent, 
+  LangSelectorComponent,
   DatepickerSampleComponent,
   BandsInTownSearchComponent
 ];
@@ -38,7 +45,7 @@ const rootComponents = [
   ],
 
   /**
-   * Define the root components to generate factories. Without this, 
+   * Define the root components to generate factories. Without this,
    * bootstrapping multiple components won't be possible as factories
    * are not generated
    */

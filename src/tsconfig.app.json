@@ -10,5 +10,9 @@
     "test.ts",
     "**/*.spec.ts",
     "main.aot.ts"
-  ]
+  ],
+  "files": [
+    "polyfills.ts",
+    "main.jit.ts"
+  ],
 }

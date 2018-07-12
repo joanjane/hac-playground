@@ -1,10 +1,10 @@
-import { Component, OnInit, Input, ViewEncapsulation, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, OnDestroy, HostListener } from '@angular/core';
 import { HacDatepickerOptions, HacDropdownOptionGroup } from 'handy-angular-components';
 import { TranslateService } from '@ngx-translate/core';
-import { ISubscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { BandsInTownService } from '../services/bandsintown.service';
-import { Band, SearchBandEventsModel, BandEvent } from '../models';
+import { BandEvent } from '../models';
 
 @Component({
     selector: BandsInTownSearchComponent.selector, // instead of writing a selector here, use a static prop
@@ -15,15 +15,15 @@ import { Band, SearchBandEventsModel, BandEvent } from '../models';
 export class BandsInTownSearchComponent implements OnInit, OnDestroy {
     // This is used at AppModule.ngDoBootstrap() as a trick to register
     // automatically this component as a multiroot component
-    static selector = 'app-bands-search';
+    static readonly selector = 'app-bands-search';
 
     locale = {};
     datepickerOptions: HacDatepickerOptions = {};
-    subscriptions: ISubscription[] = [];
+    subscriptions: Subscription[] = [];
     searchForm: FormGroup;
     bandsDropdown: HacDropdownOptionGroup[] = [];
     events: BandEvent[];
-    newBand: string = '';
+    newBand = '';
     submitted = false;
 
     constructor(
@@ -55,7 +55,7 @@ export class BandsInTownSearchComponent implements OnInit, OnDestroy {
         this.subscriptions.forEach(s => s.unsubscribe());
     }
 
-    onSubmit(event: any): void {
+    onSubmit(): void {
         this.submitted = true;
         if (this.searchForm.invalid) {
             console.log('Invalid form', this.searchForm);
@@ -77,7 +77,7 @@ export class BandsInTownSearchComponent implements OnInit, OnDestroy {
     }
 
     @HostListener('window:resize', ['$event'])
-    onResize(event) {
+    onResize() {
         const smallDevicesBreak = 640;
         // Use 1 month calendar on small devices
         const showMonths = (window.innerWidth <= smallDevicesBreak) ? 1 : 2;

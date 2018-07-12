@@ -7,7 +7,7 @@ import { LangService } from '../../core/services/lang.service';
   styleUrls: ['./langselector.component.css']
 })
 export class LangSelectorComponent {
-  static selector = 'app-langselector';
+  static readonly selector = 'app-langselector';
 
   constructor(private langService: LangService) {
   }
