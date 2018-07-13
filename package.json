@@ -23,7 +23,7 @@
     "@ngx-translate/core": "^10.0.2",
     "@ngx-translate/http-loader": "^3.0.1",
     "core-js": "^2.5.7",
-    "handy-angular-components": "^1.0.0",
+    "handy-angular-components": "^1.1.0",
     "rxjs": "^6.2.1",
     "zone.js": "^0.8.26"
   },
